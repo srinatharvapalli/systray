@@ -1,0 +1,1690 @@
+{% if request.session.vname %}
+
+<!DOCTYPE HTML>
+{% load staticfiles %}
+{% load static %}
+<html>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<title>Systray</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!--css-->
+<meta name="iewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../static/js/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+{#	<script src="{% static 'js/main.js' %}"></script>#}
+	<script src="../appe/static/js/main.js"></script>
+<!--search jQuery-->
+{#<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>#}
+<script type="text/javascript" src="../static/js/bootstrap-3.1.1.min.js"></script>
+ <!-- cart -->
+{#<script src="{% static 'js/simpleCart.min.js' %}"></script>#}
+<script src="../appe/static/js/simpleCart.min.js"></script>
+<!-- cart -->
+{#  <script defer src="{% static 'js/jquery.flexslider.js' %}"></script>#}
+  <script defer src="../appe/static/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+{#<link rel="stylesheet" href="../appe/static/css/flexslider.css" type="text/css" media="screen" />#}
+{#<script src="{% static 'js/imagezoom.js' %}"></script>#}
+<script src="../static/js/imagezoom.js"></script>
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+
+  <!--mycart-->
+  <!--start-rate-->
+<script src="../appe/static/js/jstarbox.js"></script>
+	<link rel="stylesheet" href="{% static 'css/jstarbox.css' %}" type="text/css" media="screen" charset="utf-8" />
+{#	<link rel="stylesheet" href="../appe/static/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />#}
+		<script type="text/javascript">
+			jQuery(function() {
+			jQuery('.starbox').each(function() {
+				var starbox = jQuery(this);
+					starbox.starbox({
+					average: starbox.attr('data-start-value'),
+					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+					ghosting: starbox.hasClass('ghosting'),
+					autoUpdateAverage: starbox.hasClass('autoupdate'),
+					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+					stars: starbox.attr('data-star-count') || 5
+					}).bind('starbox-value-changed', function(event, value) {
+					if(starbox.hasClass('random')) {
+					var val = Math.random();
+					starbox.next().text(' '+val);
+					return val;
+					} 
+				})
+			});
+		});
+		</script>
+<!--//End-rate-->
+<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+{#<link href="../appe/static/css/owl.carousel.css" rel="stylesheet">#}
+<script src="../appe/static/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		});
+		});
+	</script>
+
+</head>
+<body>
+<script src='../../../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="../../../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script>
+(function(){
+if(typeof _bsa !== 'undefined' && _bsa) {
+	// format, zoneKey, segment:value, options
+	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+}
+})();
+</script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script type="text/javascript" src="http://services.bilsyndication.com/adv1/?d=353" defer="" async=""></script><script> var vitag = vitag || {};vitag.gdprShowConsentTool=false;vitag.outStreamConfig = {type: "slider", position: "left" };</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125810435-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125810435-1');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../../../www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-30027142-1', 'w3layouts.com');
+  ga('send', 'pageview');
+</script>
+<body>
+	<!--header-->
+		<header class="header">
+  <a href="#" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 160px;"></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/#/">Home</a></li>
+    <li><a href="/products/">Women</a></li>
+    <li><a href="/products1/">Men</a></li>
+    <li><a href="/products2/">Kids</a></li>
+    <li><a href="/mail/">Contact</a></li>
+  </ul>
+
+  <div class="top-right">
+	<ul>
+		<li><a href="#" style="background: steelblue; color: #fff !important;">{{ request.session.vname }}</a></li>
+        <li><a href="/vlogout/">Logout</a></li>	</ul>
+	</ul>
+	</div>
+</header>
+<!--header-->
+
+	<!--content-->
+		<div class="content">
+<!--single-->
+<!---728x90--->
+{% if object_list %}
+    {% for x in object_list %}
+<div class="single-wl3">
+<div class="container">
+<div class="single-grids">
+<div class="col-md-12 single-grid">
+<div clas="single-top">
+<div class="single-left">
+<div class="flexslider">
+
+<div class="flex-viewport" style="overflow: hidden; position: relative;">
+<ul class="slides" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-1046px, 0px, 0px);">
+<li data-thumb="images/si2.jpg" class="clone" aria-hidden="true" style="width: 523px; float: left; display: block;">
+<div class="thumb-image">
+    <img src="{{ x.IMAGE.url }}" data-imagezoom="true" class="img-responsive" draggable="false">
+</div>
+</li>
+<li data-thumb="images/si.jpg" style="width: 523px; float: left; display: block;" class="">
+<div class="thumb-image">
+    <img src="{{ x.IMAGE.url }}" data-imagezoom="true" class="img-responsive" draggable="false">
+</div>
+</li>
+<li data-thumb="images/si1.jpg" class="flex-active-slide" style="width: 523px; float: left; display: block;">
+<div class="thumb-image">
+    <img src="{{ x.IMAGE.url }}" data-imagezoom="true" class="img-responsive" draggable="false">
+</div>
+</li>
+<li data-thumb="images/si2.jpg" class="" style="width: 523px; float: left; display: block;">
+<div class="thumb-image">
+    <img src="{{ x.IMAGE.url }}" data-imagezoom="true" class="img-responsive" draggable="false">
+</div>
+</li>
+<li data-thumb="images/si.jpg" style="width: 523px; float: left; display: block;" class="clone" aria-hidden="true">
+<div class="thumb-image">
+    <img src="{{ x.IMAGE.url }}" data-imagezoom="true" class="img-responsive" draggable="false">
+</div>
+</li></ul></div>
+    <ol class="flex-control-nav flex-control-thumbs">
+    <li><img src="{{ x.IMAGE.url }}" class="" draggable="false"></li>
+    <li><img src="{{ x.IMAGE.url }}" draggable="false" class="flex-active">
+    </li><li><img src="{{ x.IMAGE.url }}" draggable="false" class="">
+    </li>
+    </ol>
+    <ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
+        <li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li>
+    </ul></div>
+</div>
+<div class="single-right simpleCart_shelfItem">
+<h4>Name: {{ x.NAME }}</h4>
+<div class="block">
+<div class="starbox small ghosting"><div class="positioner"><div class="stars"><div class="ghost" style="width: 42.5px; display: none;"></div><div class="colorbar" style="width: 42.5px;"></div><div class="star_holder"><div class="star star-0"></div><div class="star star-1"></div><div class="star star-2"></div><div class="star star-3"></div><div class="star star-4"></div></div></div></div></div>
+</div>
+<p class="price item_price">Price: {{ x.PRICE }}</p>
+<div class="description">
+<p><span>Quick Overview : </span> {{ x.DESCRIPTION }}</p>
+</div>
+<div class="color-quality">
+    <h6><span>Size :</span>{{ x.SIZE }}</h6>
+<div class="tab-wl3">
+<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+<a href="/del_product/?name={{ x.NAME }}" class="my-cart-b item_add"> Delete Product</a>
+
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="clearfix"> </div>
+</div>
+</div>
+
+<div class="clearfix"> </div>
+</div>
+<!---728x90--->
+
+<!--Product Description-->
+
+<!--Product Description-->
+</div>
+</div>
+<!--single-->
+</div>
+    {% endfor %}
+{% endif %}
+		<!--content-->
+		<!---footer--->
+<div class="footer-w3l">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid">
+                <h4>About </h4>
+                <p>SYSTRAY helps people to E-Commerce their product ideas.
+                        <br><br>
+                        At our core, SYSTRAY operates on Imagination, Individuality, Good, & Impact.
+                        <br><br>
+                        We deliver Innovative , Relaible & Smart Products.
+                        <br><br>
+                        At SYSTRAY, we make magic We dream it, And then do it together every day reinventing what’s possible.</p>
+                <div class="social-icon">
+                    <a href="#"><i class="icon"></i></a>
+                    <a href="#"><i class="icon1"></i></a>
+                    <a href="#"><i class="icon2"></i></a>
+                    <a href="#"><i class="icon3"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="/#/">Home</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/yourproducts/">Products</a></li>
+                    <li><a href="/#/">Checkout</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-3 footer-grid">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/yourproducts">Products</a></li>
+                </ul>
+            </div> -->
+            <div class="col-md-3 footer-grid foot">
+                <h4>Contacts</h4>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Nasuja, Madhapur, Hyderabad</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+1 599-033-5036</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@systray.in"> info@systray.in</a></li>
+                </ul>
+            </div>
+        <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+					<!---footer--->
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2019 Systray . All rights reserved | Design by <a href="https://systray.in/">Systray LLP</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="../static/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+</body>
+
+<!-- Mirrored from p.w3layouts.com/demos/aug-2016/02-08-2016/new_shop/web/single.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jul 2019 09:41:09 GMT -->
+</html>
+{% elif request.session.cname %}
+
+<!DOCTYPE HTML>
+{% load staticfiles %}
+{% load static %}
+<html>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<title>Systray</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!--css-->
+<meta name="iewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../appe/static/js/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="../appe/static/js/main.js"></script>
+<!--search jQuery-->
+<script type="text/javascript" src="../appe/static/js/bootstrap-3.1.1.min.js"></script>
+ <!-- cart -->
+<script src="../appe/static/js/simpleCart.min.js"></script>
+<!-- cart -->
+  <script defer src="../appe/static/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="../appe/static/css/flexslider.css" type="text/css" media="screen" />
+<script src="../appe/static/js/imagezoom.js"></script>
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+
+  <!--mycart-->
+  <!--start-rate-->
+<script src="../appe/static/js/jstarbox.js"></script>
+	<link rel="stylesheet" href="../appe/static/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript">
+			jQuery(function() {
+			jQuery('.starbox').each(function() {
+				var starbox = jQuery(this);
+					starbox.starbox({
+					average: starbox.attr('data-start-value'),
+					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+					ghosting: starbox.hasClass('ghosting'),
+					autoUpdateAverage: starbox.hasClass('autoupdate'),
+					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+					stars: starbox.attr('data-star-count') || 5
+					}).bind('starbox-value-changed', function(event, value) {
+					if(starbox.hasClass('random')) {
+					var val = Math.random();
+					starbox.next().text(' '+val);
+					return val;
+					}
+				})
+			});
+		});
+		</script>
+<!--//End-rate-->
+<link href="../appe/static/css/owl.carousel.css" rel="stylesheet">
+<script src="../appe/static/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		});
+		});
+	</script>
+
+</head>
+<body>
+<script src='../../../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="../../../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script>
+(function(){
+if(typeof _bsa !== 'undefined' && _bsa) {
+	// format, zoneKey, segment:value, options
+	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+}
+})();
+</script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script type="text/javascript" src="http://services.bilsyndication.com/adv1/?d=353" defer="" async=""></script><script> var vitag = vitag || {};vitag.gdprShowConsentTool=false;vitag.outStreamConfig = {type: "slider", position: "left" };</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125810435-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125810435-1');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../../../www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-30027142-1', 'w3layouts.com');
+  ga('send', 'pageview');
+</script>
+<body>
+	<!--header-->
+		<header class="header">
+  <a href="#" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 160px;"></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/#/">Home</a></li>
+    <li><a href="/products/">Women</a></li>
+    <li><a href="/products1/">Men</a></li>
+    <li><a href="/products2/">Kids</a></li>
+    <li><a href="/mail/">Contact</a></li>
+  </ul>
+
+  <div class="top-right">
+	<ul>
+		<li><a href="/#/">Checkout</a></li>
+		<li><a href="/login/">Login</a></li>
+	</ul>
+	</div>
+</header>
+<!--header-->
+		<!--banner-->
+		<div class="banner1">
+			<div class="container">
+				<h3><a href="dashboard.html">Home</a> / <span>Single</span></h3>
+			</div>
+		</div>
+	<!--banner-->
+
+	<!--content-->
+		<div class="content">
+			<!--single-->
+			<!---728x90--->
+
+			<div class="single-wl3">
+				<div class="container">
+					<div class="single-grids">
+						<div class="col-md-9 single-grid">
+							<div clas="single-top">
+								<div class="single-left">
+									<div class="flexslider">
+										<ul class="slides">
+											<li data-thumb="images/si.jpg">
+												<div class="thumb-image"> <img src="../appe/static/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+											<li data-thumb="images/si1.jpg">
+												 <div class="thumb-image"> <img src="../appe/static/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+											<li data-thumb="images/si2.jpg">
+											   <div class="thumb-image"> <img src="../appe/static/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+										 </ul>
+									</div>
+								</div>
+								<div class="single-right simpleCart_shelfItem">
+									<h4>Sed do eiusmod tempor</h4>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<p class="price item_price">$ 14.00</p>
+									<div class="description">
+										<p><span>Quick Overview : </span> In cursus faucibus tortor eu vestibulum. Ut eget turpis ac justo porta varius. Donec vel felis ante, ac vehicula ipsum. Quisque sed diam metus. Quisque eget leo sit amet erat varius rutrum vitae dapibus lectus. Vivamus et sapien ante. Suspendisse potenti. Fusce in tellus est, ac consequat.</p>
+									</div>
+									<div class="color-quality">
+										<h6>Quality :</h6>
+											<div class="quantity">
+												<div class="quantity-select">
+													<div class="entry value-minus1">&nbsp;</div>
+													<div class="entry value1"><span>1</span></div>
+													<div class="entry value-plus1 active">&nbsp;</div>
+												</div>
+											</div>
+												<!--quantity-->
+														<script>
+														$('.value-plus1').on('click', function(){
+															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
+															divUpd.text(newVal);
+														});
+
+														$('.value-minus1').on('click', function(){
+															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
+															if(newVal>=1) divUpd.text(newVal);
+														});
+														</script>
+													<!--quantity-->
+									</div>
+									<div class="women">
+										<span class="size">XL / XXL / S </span>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+									<div class="social-icon">
+										<a href="#"><i class="icon"></i></a>
+										<a href="#"><i class="icon1"></i></a>
+										<a href="#"><i class="icon2"></i></a>
+										<a href="#"><i class="icon3"></i></a>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="col-md-3 single-grid1">
+							<h3>Recent Products</h3>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 29.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r1.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 19.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 19.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1">$ 45.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<!---728x90--->
+
+					<!--Product Description-->
+						<div class="product-w3agile">
+							<h3 class="tittle1">Product Description</h3>
+							<div class="product-grids">
+								<div class="col-md-4 product-grid">
+									<div id="owl-demo" class="owl-carousel">
+										<div class="item">
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 29.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r1.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1">$ 45.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r4.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 29.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r5.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1">$ 45.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+									</div>
+									<img class="img-responsive " src="../appe/static/images/woo2.jpg" alt="">
+								</div>
+								<div class="col-md-8 product-grid1">
+									<div class="tab-wl3">
+										<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+											<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+												<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Description</a></li>
+												<li role="presentation"><a href="#reviews" role="tab" id="reviews-tab" data-toggle="tab" aria-controls="reviews">Reviews (1)</a></li>
+
+											</ul>
+											<div id="myTabContent" class="tab-content">
+												<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+													<div class="descr">
+														<h4>Suspendisse laoreet, augue vel mattis </h4>
+														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+														<p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+															<div class="video">
+															<iframe src="https://player.vimeo.com/video/22158502" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+															</div>
+														<ul>
+															<li> Twin button front fastening</li>
+															<li> Length:65cm</li>
+															<li> Regular fit</li>
+															<li> Notched lapels</li>
+															<li> Internal pockets</li>
+															<li> Centre-back vent </li>
+															<li> Material : Outer: 40% Linen &amp; 40% Polyamide; Body Lining: 100% Cotton; Lining: 100% Acetate</li>
+														</ul>
+														<p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+
+													</div>
+												</div>
+												<div role="tabpanel" class="tab-pane fade" id="reviews" aria-labelledby="reviews-tab">
+													<div class="descr">
+														<div class="reviews-top">
+															<div class="reviews-left">
+																<img src="../appe/static/images/men3.jpg" alt=" " class="img-responsive">
+															</div>
+															<div class="reviews-right">
+																<ul>
+																	<li><a href="#">Admin</a></li>
+																	<li><a href="#"><i class="glyphicon glyphicon-share" aria-hidden="true"></i>Reply</a></li>
+																</ul>
+																<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit.</p>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+														<div class="reviews-bottom">
+															<h4>Add Reviews</h4>
+															<p>Your email address will not be published. Required fields are marked *</p>
+															<p>Your Rating</p>
+															<div class="block">
+																<div class="starbox small ghosting"><div class="positioner"><div class="stars"><div class="ghost" style="width: 42.5px; display: none;"></div><div class="colorbar" style="width: 42.5px;"></div><div class="star_holder"><div class="star star-0"></div><div class="star star-1"></div><div class="star star-2"></div><div class="star star-3"></div><div class="star star-4"></div></div></div></div></div>
+															</div>
+															<form action="#" method="post">
+																<label>Your Review </label>
+																<textarea type="text" Name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+																<div class="row">
+																	<div class="col-md-6 row-grid">
+																		<label>Name</label>
+																		<input type="text" value="Name" Name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+																	</div>
+																	<div class="col-md-6 row-grid">
+																		<label>Email</label>
+																		<input type="email" value="Email" Name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+																	</div>
+																	<div class="clearfix"></div>
+																</div>
+																<input type="submit" value="SEND">
+															</form>
+														</div>
+													</div>
+												</div>
+												<div role="tabpanel" class="tab-pane fade" id="custom" aria-labelledby="custom-tab">
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					<!--Product Description-->
+				</div>
+			</div>
+			<!--single-->
+			<!---728x90--->
+
+			<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h3 class="tittle1">Best Sellers</h3>
+						<div class="arrivals-grids">
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/p28.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/p27.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben">
+										<p>NEW</p>
+									</div>
+									<div class="ribben1">
+										<p>SALE</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/p30.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/p29.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben2">
+										<p>OUT OF STOCK</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/s2.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/s1.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben1">
+										<p>SALE</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/s4.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/s3.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben">
+										<p>NEW</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			<!--new-arrivals-->
+		</div>
+		<!--content-->
+		<!---footer--->
+					 <div class="footer-w3l">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid">
+                <h4>About </h4>
+                <p>SYSTRAY helps people to E-Commerce their product ideas.
+                        <br><br>
+                        At our core, SYSTRAY operates on Imagination, Individuality, Good, & Impact.
+                        <br><br>
+                        We deliver Innovative , Relaible & Smart Products.
+                        <br><br>
+                        At SYSTRAY, we make magic We dream it, And then do it together every day reinventing what’s possible.</p>
+                <div class="social-icon">
+                    <a href="#"><i class="icon"></i></a>
+                    <a href="#"><i class="icon1"></i></a>
+                    <a href="#"><i class="icon2"></i></a>
+                    <a href="#"><i class="icon3"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="/#/">Home</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/yourproducts/">Products</a></li>
+                    <li><a href="/#/">Checkout</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-3 footer-grid">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/yourproducts">Products</a></li>
+                </ul>
+            </div> -->
+            <div class="col-md-3 footer-grid foot">
+                <h4>Contacts</h4>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Nasuja, Madhapur, Hyderabad</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+1 599-033-5036</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@systray.in"> info@systray.in</a></li>
+                </ul>
+            </div>
+        <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+					<!---footer--->
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2019 Systray . All rights reserved | Design by <a href="https://systray.in/">Systray LLP</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="../static/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+</body>
+
+<!-- Mirrored from p.w3layouts.com/demos/aug-2016/02-08-2016/new_shop/web/single.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jul 2019 09:41:09 GMT -->
+</html>
+
+{% else %}
+
+
+<!DOCTYPE HTML>
+{% load staticfiles %}
+{% load static %}
+<html>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<title>Systray</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!--css-->
+<meta name="iewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../appe/static/js/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="../appe/static/js/main.js"></script>
+<!--search jQuery-->
+<script type="text/javascript" src="../appe/static/js/bootstrap-3.1.1.min.js"></script>
+ <!-- cart -->
+<script src="../appe/static/js/simpleCart.min.js"></script>
+<!-- cart -->
+  <script defer src="../appe/static/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="../appe/static/css/flexslider.css" type="text/css" media="screen" />
+<script src="../appe/static/js/imagezoom.js"></script>
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+
+  <!--mycart-->
+  <!--start-rate-->
+<script src="../appe/static/js/jstarbox.js"></script>
+	<link rel="stylesheet" href="../appe/static/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript">
+			jQuery(function() {
+			jQuery('.starbox').each(function() {
+				var starbox = jQuery(this);
+					starbox.starbox({
+					average: starbox.attr('data-start-value'),
+					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+					ghosting: starbox.hasClass('ghosting'),
+					autoUpdateAverage: starbox.hasClass('autoupdate'),
+					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+					stars: starbox.attr('data-star-count') || 5
+					}).bind('starbox-value-changed', function(event, value) {
+					if(starbox.hasClass('random')) {
+					var val = Math.random();
+					starbox.next().text(' '+val);
+					return val;
+					}
+				})
+			});
+		});
+		</script>
+<!--//End-rate-->
+<link href="../appe/static/css/owl.carousel.css" rel="stylesheet">
+<script src="../appe/static/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		});
+		});
+	</script>
+
+</head>
+<body>
+<script src='../../../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="../../../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script>
+(function(){
+if(typeof _bsa !== 'undefined' && _bsa) {
+	// format, zoneKey, segment:value, options
+	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+}
+})();
+</script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script type="text/javascript" src="http://services.bilsyndication.com/adv1/?d=353" defer="" async=""></script><script> var vitag = vitag || {};vitag.gdprShowConsentTool=false;vitag.outStreamConfig = {type: "slider", position: "left" };</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125810435-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125810435-1');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../../../../www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-30027142-1', 'w3layouts.com');
+  ga('send', 'pageview');
+</script>
+<body>
+	<!--header-->
+		<header class="header">
+  <a href="#" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 160px;"></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/#/">Home</a></li>
+    <li><a href="/products/">Women</a></li>
+    <li><a href="/products1/">Men</a></li>
+    <li><a href="/products2/">Kids</a></li>
+    <li><a href="/mail/">Contact</a></li>
+  </ul>
+
+  <div class="top-right">
+	<ul>
+		<li><a href="/#/">Checkout</a></li>
+		<li><a href="/login/">Login</a></li>
+	</ul>
+	</div>
+</header>
+<!--header-->
+		<!--banner-->
+		<div class="banner1">
+			<div class="container">
+				<h3><a href="dashboard.html">Home</a> / <span>Single</span></h3>
+			</div>
+		</div>
+	<!--banner-->
+
+	<!--content-->
+		<div class="content">
+			<!--single-->
+			<!---728x90--->
+
+			<div class="single-wl3">
+				<div class="container">
+					<div class="single-grids">
+						<div class="col-md-9 single-grid">
+							<div clas="single-top">
+								<div class="single-left">
+									<div class="flexslider">
+										<ul class="slides">
+											<li data-thumb="images/si.jpg">
+												<div class="thumb-image"> <img src="../appe/static/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+											<li data-thumb="images/si1.jpg">
+												 <div class="thumb-image"> <img src="../appe/static/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+											<li data-thumb="images/si2.jpg">
+											   <div class="thumb-image"> <img src="../appe/static/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+											</li>
+										 </ul>
+									</div>
+								</div>
+								<div class="single-right simpleCart_shelfItem">
+									<h4>Sed do eiusmod tempor</h4>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<p class="price item_price">$ 14.00</p>
+									<div class="description">
+										<p><span>Quick Overview : </span> In cursus faucibus tortor eu vestibulum. Ut eget turpis ac justo porta varius. Donec vel felis ante, ac vehicula ipsum. Quisque sed diam metus. Quisque eget leo sit amet erat varius rutrum vitae dapibus lectus. Vivamus et sapien ante. Suspendisse potenti. Fusce in tellus est, ac consequat.</p>
+									</div>
+									<div class="color-quality">
+										<h6>Quality :</h6>
+											<div class="quantity">
+												<div class="quantity-select">
+													<div class="entry value-minus1">&nbsp;</div>
+													<div class="entry value1"><span>1</span></div>
+													<div class="entry value-plus1 active">&nbsp;</div>
+												</div>
+											</div>
+												<!--quantity-->
+														<script>
+														$('.value-plus1').on('click', function(){
+															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
+															divUpd.text(newVal);
+														});
+
+														$('.value-minus1').on('click', function(){
+															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
+															if(newVal>=1) divUpd.text(newVal);
+														});
+														</script>
+													<!--quantity-->
+									</div>
+									<div class="women">
+										<span class="size">XL / XXL / S </span>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+									<div class="social-icon">
+										<a href="#"><i class="icon"></i></a>
+										<a href="#"><i class="icon1"></i></a>
+										<a href="#"><i class="icon2"></i></a>
+										<a href="#"><i class="icon3"></i></a>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="col-md-3 single-grid1">
+							<h3>Recent Products</h3>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 29.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r1.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 19.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1"> $ 19.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="recent-grids">
+								<div class="recent-left">
+									<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+								</div>
+								<div class="recent-right">
+									<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<span class=" price-in1">$ 45.00</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<!---728x90--->
+
+					<!--Product Description-->
+						<div class="product-w3agile">
+							<h3 class="tittle1">Product Description</h3>
+							<div class="product-grids">
+								<div class="col-md-4 product-grid">
+									<div id="owl-demo" class="owl-carousel">
+										<div class="item">
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 29.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r1.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1">$ 45.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r4.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 29.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r5.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r2.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Lorem ipsum dolor </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1"> $ 19.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+											<div class="recent-grids">
+												<div class="recent-left">
+													<a href="single.html"><img class="img-responsive " src="../appe/static/images/r3.jpg" alt=""></a>
+												</div>
+												<div class="recent-right">
+													<h6 class="best2"><a href="single.html">Ut enim ad minim </a></h6>
+													<div class="block">
+														<div class="starbox small ghosting"> </div>
+													</div>
+													<span class=" price-in1">$ 45.00</span>
+												</div>
+												<div class="clearfix"> </div>
+											</div>
+										</div>
+									</div>
+									<img class="img-responsive " src="../appe/static/images/woo2.jpg" alt="">
+								</div>
+								<div class="col-md-8 product-grid1">
+									<div class="tab-wl3">
+										<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+											<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+												<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Description</a></li>
+												<li role="presentation"><a href="#reviews" role="tab" id="reviews-tab" data-toggle="tab" aria-controls="reviews">Reviews (1)</a></li>
+
+											</ul>
+											<div id="myTabContent" class="tab-content">
+												<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+													<div class="descr">
+														<h4>Suspendisse laoreet, augue vel mattis </h4>
+														<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+														<p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+															<div class="video">
+															<iframe src="https://player.vimeo.com/video/22158502" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+															</div>
+														<ul>
+															<li> Twin button front fastening</li>
+															<li> Length:65cm</li>
+															<li> Regular fit</li>
+															<li> Notched lapels</li>
+															<li> Internal pockets</li>
+															<li> Centre-back vent </li>
+															<li> Material : Outer: 40% Linen &amp; 40% Polyamide; Body Lining: 100% Cotton; Lining: 100% Acetate</li>
+														</ul>
+														<p class="quote">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+
+													</div>
+												</div>
+												<div role="tabpanel" class="tab-pane fade" id="reviews" aria-labelledby="reviews-tab">
+													<div class="descr">
+														<div class="reviews-top">
+															<div class="reviews-left">
+																<img src="../appe/static/images/men3.jpg" alt=" " class="img-responsive">
+															</div>
+															<div class="reviews-right">
+																<ul>
+																	<li><a href="#">Admin</a></li>
+																	<li><a href="#"><i class="glyphicon glyphicon-share" aria-hidden="true"></i>Reply</a></li>
+																</ul>
+																<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit.</p>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+														<div class="reviews-bottom">
+															<h4>Add Reviews</h4>
+															<p>Your email address will not be published. Required fields are marked *</p>
+															<p>Your Rating</p>
+															<div class="block">
+																<div class="starbox small ghosting"><div class="positioner"><div class="stars"><div class="ghost" style="width: 42.5px; display: none;"></div><div class="colorbar" style="width: 42.5px;"></div><div class="star_holder"><div class="star star-0"></div><div class="star star-1"></div><div class="star star-2"></div><div class="star star-3"></div><div class="star star-4"></div></div></div></div></div>
+															</div>
+															<form action="#" method="post">
+																<label>Your Review </label>
+																<textarea type="text" Name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+																<div class="row">
+																	<div class="col-md-6 row-grid">
+																		<label>Name</label>
+																		<input type="text" value="Name" Name="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+																	</div>
+																	<div class="col-md-6 row-grid">
+																		<label>Email</label>
+																		<input type="email" value="Email" Name="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+																	</div>
+																	<div class="clearfix"></div>
+																</div>
+																<input type="submit" value="SEND">
+															</form>
+														</div>
+													</div>
+												</div>
+												<div role="tabpanel" class="tab-pane fade" id="custom" aria-labelledby="custom-tab">
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					<!--Product Description-->
+				</div>
+			</div>
+			<!--single-->
+			<!---728x90--->
+
+			<div class="new-arrivals-w3agile">
+					<div class="container">
+						<h3 class="tittle1">Best Sellers</h3>
+						<div class="arrivals-grids">
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/p28.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/p27.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben">
+										<p>NEW</p>
+									</div>
+									<div class="ribben1">
+										<p>SALE</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/p30.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/p29.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben2">
+										<p>OUT OF STOCK</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/s2.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/s1.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben1">
+										<p>SALE</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 arrival-grid simpleCart_shelfItem">
+								<div class="grid-arr">
+									<div  class="grid-arrival">
+										<figure>
+											<a href="single.html">
+												<div class="grid-img">
+													<img src="../appe/static/images/s4.jpg" class="img-responsive" alt="">
+												</div>
+												<div class="grid-img">
+													<img src="../appe/static/images/s3.jpg" class="img-responsive" alt="">
+												</div>
+											</a>
+										</figure>
+									</div>
+									<div class="ribben">
+										<p>NEW</p>
+									</div>
+									<div class="block">
+										<div class="starbox small ghosting"> </div>
+									</div>
+									<div class="women">
+										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
+										<span class="size">XL / XXL / S </span>
+										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			<!--new-arrivals-->
+		</div>
+		<!--content-->
+		<!---footer--->
+					 <div class="footer-w3l">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid">
+                <h4>About </h4>
+                <p>SYSTRAY helps people to E-Commerce their product ideas.
+                        <br><br>
+                        At our core, SYSTRAY operates on Imagination, Individuality, Good, & Impact.
+                        <br><br>
+                        We deliver Innovative , Relaible & Smart Products.
+                        <br><br>
+                        At SYSTRAY, we make magic We dream it, And then do it together every day reinventing what’s possible.</p>
+                <div class="social-icon">
+                    <a href="#"><i class="icon"></i></a>
+                    <a href="#"><i class="icon1"></i></a>
+                    <a href="#"><i class="icon2"></i></a>
+                    <a href="#"><i class="icon3"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="/#/">Home</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/yourproducts/">Products</a></li>
+                    <li><a href="/#/">Checkout</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-3 footer-grid">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/yourproducts">Products</a></li>
+                </ul>
+            </div> -->
+            <div class="col-md-3 footer-grid foot">
+                <h4>Contacts</h4>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Nasuja, Madhapur, Hyderabad</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+1 599-033-5036</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@systray.in"> info@systray.in</a></li>
+                </ul>
+            </div>
+        <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+					<!---footer--->
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2019 Systray . All rights reserved | Design by <a href="https://systray.in/">Systray LLP</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="../static/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+</body>
+
+<!-- Mirrored from p.w3layouts.com/demos/aug-2016/02-08-2016/new_shop/web/single.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Jul 2019 09:41:09 GMT -->
+</html>
+{% endif %}

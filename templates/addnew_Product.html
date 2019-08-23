@@ -1,0 +1,534 @@
+{% if request.session.vname %}
+{% load staticfiles %}
+{% load static %}
+<html>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<title>Systray</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../appe/static/js/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="../appe/static/js/main.js"></script>
+<!--search jQuery-->
+
+ <!--mycart-->
+ <script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js/simpleCart.min.js' %}"></script>
+</head>
+<body class="youpro">
+	<!--header-->
+		<header class="header">
+  <a href="{% url 'index' %}" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 160px;"></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/dashboard/">Home</a></li>
+    <li><a href="/products/">Women</a></li>
+    <li><a href="/products1/">Men</a></li>
+    <li><a href="/products2/">Kids</a></li>
+    <li><a href="/mail/">Contact</a></li>
+  </ul>
+
+  <div class="top-right">
+	<ul>
+		<li><a href="/#/">Checkout</a></li>
+        <li><a href="#" style="background: steelblue; color: #fff !important;">{{ request.session.vname }}</a></li>
+        <li><a href="/vlogout/">Logout</a></li>	</ul>
+	</ul>
+	</div>
+</header>
+<!--header-->
+<script>
+$(document).ready(function(){
+  // jquery code here
+  
+});
+</script>
+		<!--content-->
+			<div class="content">
+			<div class="login">
+				<!---728x90--->
+				
+          <div class="container">
+            <section class="panel panel-default">
+              {% if msg %}
+                {{ msg }}
+              {% endif %}
+          <div class="panel-heading"> 
+          	<h3 class="text-center">Add a New Product</h3>
+          </div> 
+        
+          
+          <div class="panel-body">
+          <form action="/addnewproduct/" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+          <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">Select</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+              <input type="radio" name="type" value="women" id="inlineRadio1"> Women
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="men" id="inlineRadio2"> Men
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="kid" id="inlineRadio2"> Kid
+            </label>
+            </div>
+          </div> <!-- form-group // -->
+          
+          <div class="form-group">
+            <label for="tech" class="col-sm-3 control-label">Categories</label>
+            <div class="col-sm-3">
+           <select class="form-control" name="categories" required>
+          <option>Select Category</option>
+          <option>Cloths</option>
+          <option>Accessories</option>
+           </select>
+            </div>
+          </div>
+          <!-- form-group // -->
+          <div class="form-group">
+            <label for="tech" class="col-sm-3 control-label">Category Type</label>
+            <div class="col-sm-3">
+           <select class="form-control" name="categorytype" required>
+          <option>Select Type</option>
+          <option>Shirts</option>
+          <option>Pants</option>
+          <option>Accessories</option>
+           </select>
+            </div>
+            </div>
+            <!-- form-group // -->
+            <div class="form-group">
+              <label for="tech" class="col-sm-3 control-label">Size</label>
+              <div class="col-sm-3">
+             <select class="form-control" name="size" required>
+            <option value="">Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+             </select>
+              </div>
+              </div>
+            <!-- form-group // -->
+            <div class="form-group">
+              <label for="qty" class="col-sm-3 control-label">Quantity</label>
+              <div class="col-sm-3">
+             <input type="text" class="form-control" name="quantity" id="qty" placeholder="Quantity" required>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="qty" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-3">
+               <input type="text" class="form-control" name="name" id="qty" placeholder="Name" required>
+                </div>
+              </div>
+             <!-- form-group // -->
+            <div class="form-group">
+              <label for="name" class="col-sm-3 control-label">Upload Image</label>
+              <div class="col-sm-3">
+                  <label class="control-label small" for="file_img">Type (jpg/png):</label>
+                <div class="input-container">
+                  <input type="file" id="real-input" name="image" required>
+                  <button class="browse-btn">Browse Files</button>
+                  <span class="file-info">Upload a Product</span>
+               </div>
+               </div>
+            </div> <!-- form-group // -->
+            <div class="form-group">
+                <label for="qty" class="col-sm-3 control-label">Price</label>
+                <div class="col-sm-3">
+               <input type="text" class="form-control" name="price" id="price" placeholder="Price" required>
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="about" class="col-sm-3 control-label">Description</label>
+              <div class="col-sm-4">
+                <textarea cols="10" rows="5" class="form-control" name="description" required></textarea>
+              </div>
+            </div> <!-- form-group // -->
+            <hr>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+              </div>
+            </div> <!-- form-group // -->
+          </form>
+            
+          </div><!-- panel-body // -->
+          </section><!-- panel// -->
+          </div> <!-- container// -->
+				</div>
+			</div>
+     	</div>
+				<!---728x90--->
+
+		<!--content-->
+		<!---footer--->
+					 <div class="footer-w3l">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid">
+                <h4>About </h4>
+                <p>SYSTRAY helps people to E-Commerce their product ideas.
+                        <br><br>
+                        At our core, SYSTRAY operates on Imagination, Individuality, Good, & Impact.
+                        <br><br>
+                        We deliver Innovative , Relaible & Smart Products.
+                        <br><br>
+                        At SYSTRAY, we make magic We dream it, And then do it together every day reinventing what’s possible.</p>
+                <div class="social-icon">
+                    <a href="#"><i class="icon"></i></a>
+                    <a href="#"><i class="icon1"></i></a>
+                    <a href="#"><i class="icon2"></i></a>
+                    <a href="#"><i class="icon3"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="/#/">Home</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/yourproducts/">Products</a></li>
+                    <li><a href="/#/">CheckOut</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-3 footer-grid">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/yourproducts">Products</a></li>
+                </ul>
+            </div> -->
+            <div class="col-md-3 footer-grid foot">
+                <h4>Contacts</h4>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Nasuja, Madhapur, Hyderabad</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+1 599-033-5036</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@systray.in"> info@systray.in</a></li>
+                </ul>
+            </div>
+        <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+					<!---footer--->
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2019 Systray . All rights reserved | Design by <a href="https://systray.in/">Systray LLP</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="../static/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+</body>
+
+<script>
+
+const uploadButton = document.querySelector('.browse-btn');
+const fileInfo = document.querySelector('.file-info');
+const realInput = document.getElementById('real-input');
+
+uploadButton.addEventListener('click', (e) => {
+  realInput.click();
+});
+
+realInput.addEventListener('change', () => {
+  const name = realInput.value.split(/\\|\//).pop();
+  const truncated = name.length > 40 
+    ? name.substr(name.length - 40) 
+    : name;
+  
+  fileInfo.innerHTML = truncated;
+});
+
+</script>
+</html>
+{% else %}
+
+{% load staticfiles %}
+{% load static %}
+<html>
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<title>Systray</title>
+<!--css-->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+<!--css-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="../appe/static/js/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!--search jQuery-->
+	<script src="../appe/static/js/main.js"></script>
+<!--search jQuery-->
+
+ <!--mycart-->
+ <script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+ <script type="text/javascript" src="{% static 'js/simpleCart.min.js' %}"></script>
+</head>
+<body class="youpro">
+	<!--header-->
+		<header class="header">
+  <a href="#" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 160px;"></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/#/">Home</a></li>
+    <li><a href="/products/">Women</a></li>
+    <li><a href="/products1/">Men</a></li>
+    <li><a href="/products2/">Kids</a></li>
+    <li><a href="/mail/">Contact</a></li>
+  </ul>
+
+  <div class="top-right">
+	<ul>
+		<li><a href="/#/">Checkout</a></li>
+		<li><a href="/login/">Login</a></li>
+	</ul>
+	</div>
+</header>
+<!--header-->
+<script>
+$(document).ready(function(){
+  // jquery code here
+
+});
+</script>
+		<!--content-->
+			<div class="content">
+			<div class="login">
+				<!---728x90--->
+
+          <div class="container">
+            <section class="panel panel-default">
+                {% if msg %}
+                  {{ msg }}
+                {% endif %}
+          <div class="panel-heading">
+          	<h3 class="text-center">Add a New Product</h3>
+          </div>
+
+
+          <div class="panel-body">
+          <form action="#" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">Select</label>
+            <div class="col-sm-9">
+              <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Women
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Men
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Kid
+            </label>
+            </div>
+          </div> <!-- form-group // -->
+
+          <div class="form-group">
+            <label for="tech" class="col-sm-3 control-label">Categories</label>
+            <div class="col-sm-3">
+           <select class="form-control">
+          <option value="">Select Category</option>
+          <option value="texnolog2">Cloths</option>
+          <option value="texnolog3">Accessories</option>
+           </select>
+            </div>
+          </div>
+          <!-- form-group // -->
+          <div class="form-group">
+            <label for="tech" class="col-sm-3 control-label">Category Type</label>
+            <div class="col-sm-3">
+           <select class="form-control">
+          <option value="">Select Type</option>
+          <option value="texnolog2">Shirts</option>
+          <option value="texnolog3">Pants</option>
+          <option value="texnolog4">Accessories</option>
+           </select>
+            </div>
+            </div>
+            <!-- form-group // -->
+            <div class="form-group">
+              <label for="tech" class="col-sm-3 control-label">Size</label>
+              <div class="col-sm-3">
+             <select class="form-control">
+            <option value="">Select Size</option>
+            <option value="texnolog2">S</option>
+            <option value="texnolog3">M</option>
+            <option value="texnolog4">L</option>
+            <option value="texnolog5">XL</option>
+            <option value="texnolog6">XXL</option>
+             </select>
+              </div>
+              </div>
+            <!-- form-group // -->
+            <div class="form-group">
+              <label for="qty" class="col-sm-3 control-label">Quantity</label>
+              <div class="col-sm-3">
+             <input type="text" class="form-control" name="qty" id="qty" placeholder="Quantity">
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="qty" class="col-sm-3 control-label">Name</label>
+                <div class="col-sm-3">
+               <input type="text" class="form-control" name="qty" id="qty" placeholder="Name">
+                </div>
+              </div>
+             <!-- form-group // -->
+            <div class="form-group">
+              <label for="name" class="col-sm-3 control-label">Upload Image</label>
+              <div class="col-sm-3">
+                  <label class="control-label small" for="file_img">Type (jpg/png):</label>
+                <div class="input-container">
+                  <input type="file" id="real-input">
+                  <button class="browse-btn">Browse Files</button>
+                  <span class="file-info">Upload a Product</span>
+               </div>
+               </div>
+            </div> <!-- form-group // -->
+            <div class="form-group">
+                <label for="qty" class="col-sm-3 control-label">Price</label>
+                <div class="col-sm-3">
+               <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="about" class="col-sm-3 control-label">Description</label>
+              <div class="col-sm-4">
+                <textarea cols="10" rows="5" class="form-control"></textarea>
+              </div>
+            </div> <!-- form-group // -->
+            <hr>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+              </div>
+            </div> <!-- form-group // -->
+          </form>
+
+          </div><!-- panel-body // -->
+          </section><!-- panel// -->
+          </div> <!-- container// -->
+				</div>
+			</div>
+     	</div>
+				<!---728x90--->
+
+		<!--content-->
+		<!---footer--->
+					 <div class="footer-w3l">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-6 footer-grid">
+                <h4>About </h4>
+                <p>SYSTRAY helps people to E-Commerce their product ideas.
+                        <br><br>
+                        At our core, SYSTRAY operates on Imagination, Individuality, Good, & Impact.
+                        <br><br>
+                        We deliver Innovative , Relaible & Smart Products.
+                        <br><br>
+                        At SYSTRAY, we make magic We dream it, And then do it together every day reinventing what’s possible.</p>
+                <div class="social-icon">
+                    <a href="#"><i class="icon"></i></a>
+                    <a href="#"><i class="icon1"></i></a>
+                    <a href="#"><i class="icon2"></i></a>
+                    <a href="#"><i class="icon3"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="/#/">Home</a></li>
+                    <li><a href="/login/">Login</a></li>
+                    <li><a href="/yourproducts/">Products</a></li>
+                    <li><a href="/#/">CheckOut</a></li>
+                </ul>
+            </div>
+            <!-- <div class="col-md-3 footer-grid">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/yourproducts">Products</a></li>
+                </ul>
+            </div> -->
+            <div class="col-md-3 footer-grid foot">
+                <h4>Contacts</h4>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Nasuja, Madhapur, Hyderabad</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+1 599-033-5036</a></li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@systray.in"> info@systray.in</a></li>
+                </ul>
+            </div>
+        <div class="clearfix"> </div>
+        </div>
+
+    </div>
+</div>
+					<!---footer--->
+					<!--copy-->
+					<div class="copy-section">
+						<div class="container">
+							<div class="copy-left">
+								<p>&copy; 2019 Systray . All rights reserved | Design by <a href="https://systray.in/">Systray LLP</a></p>
+							</div>
+							<div class="copy-right">
+								<img src="../static/images/card.png" alt=""/>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				<!--copy-->
+</body>
+
+<script>
+
+const uploadButton = document.querySelector('.browse-btn');
+const fileInfo = document.querySelector('.file-info');
+const realInput = document.getElementById('real-input');
+
+uploadButton.addEventListener('click', (e) => {
+  realInput.click();
+});
+
+realInput.addEventListener('change', () => {
+  const name = realInput.value.split(/\\|\//).pop();
+  const truncated = name.length > 40
+    ? name.substr(name.length - 40)
+    : name;
+
+  fileInfo.innerHTML = truncated;
+});
+
+</script>
+</html>
+{% endif %}

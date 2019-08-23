@@ -1,0 +1,79 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Vendor Register </title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gadget Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    
+    <!-- Meta tags -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- //font-awesome icons -->
+    <!--stylesheets-->
+    <link href="{% static 'css/styless.css' %}" rel="stylesheet" >
+    <!--//style sheet end here-->
+</head>
+<body style="background-image: url(../static/images/logbg.jpg);"></body>>
+	<!---728x90--->
+    <div class="w3layouts-two-grids">
+	<!---728x90--->
+        <div class="mid-class">
+            <div class="img-right-side">
+                    <a href="#" class="logo"><img class="" src="../static/images/logo.png" alt="image" style="width: 500px;margin-top:50px"></a>
+                <!-- <img src="../static/images/b11.png" class="img-fluid" alt=""> -->
+            </div>
+            <div class="txt-left-side" style=" margin-top: 50px;">
+                <h2> Vendor Sign Up </h2>
+               <form action="/vendorsignup/" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-user-o" aria-hidden="true"></span>
+                        <input type="text" name="Username" placeholder=" Name" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-phone" aria-hidden="true"></span>
+                        <input type="text" name="Mobileno" placeholder="Phone" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                        <input type="email" name="Email" placeholder="Email" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="form-left-to-w3l ">
+
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <input type="password" name="Password" placeholder="Password" required="">
+                        <div class="clear"></div>
+                    </div>
+                    <div class="w3layouts_more-buttn">
+                            <h3>Don't Have an account..?
+                                <a href="/newvendorlogin">Login Here
+                                </a>
+                            </h3>
+                        </div>
+                    <div class="btnn">
+                        <button type="submit">Sign Up </button><br> 
+                        <a href="/login/">Cancel</a>
+                    </div>
+                </form>
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+	<!---728x90--->
+</body>
+
+</html>
